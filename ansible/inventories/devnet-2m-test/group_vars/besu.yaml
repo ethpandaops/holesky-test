@@ -30,6 +30,7 @@ besu_container_command_extra_args:
   - --sync-mode=FULL
   - --data-storage-format=BONSAI
   - --Xfilter-on-enr-fork-id=true
+  - --kzg-trusted-setup=/network-config/trusted_setup.txt
 
 besu_container_pull: true
 

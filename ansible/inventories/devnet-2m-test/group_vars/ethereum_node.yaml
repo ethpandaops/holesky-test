@@ -1,9 +1,13 @@
 ethereum_cl_bootnodes:
   - "{{ hostvars['bootnode-1']['cl_bootnode_fact_enr'] }}"
   - "{{ hostvars['bootnode-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['lighthouse-geth-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['teku-geth-1']['ethereum_node_fact_cl_enr'] }}"
 
 ethereum_el_bootnodes: 
   - "{{ hostvars['bootnode-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['lighthouse-geth-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['teku-geth-1']['ethereum_node_fact_el_enode'] }}"
 
 ethereum_node_fact_discovery_el_enode_cmd:
   ethereumjs: cat /data/ethereumjs/sepolia/rlpx
@@ -58,6 +62,6 @@ prometheus_config: |
     - job_name: "consensus_node"
       metrics_path: "/metrics"
       static_configs:
-        - targets: ["{{ ethereum_node_cl }}:{{ ethereum_node_cl_ports_metrics }}"]
+        - targets: ["{{ vars[ethereum_node_cl + '_container_name'] }}:{{ ethereum_node_cl_ports_metrics }}"]
           labels:
             instance: "{{ inventory_hostname }}"
