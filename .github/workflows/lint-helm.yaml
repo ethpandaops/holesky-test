@@ -1,0 +1,26 @@
+name: Helm lint
+on:
+  pull_request:
+    paths:
+      - 'kubernetes/**'
+      - '.tool-versions'
+      - '.github/actions/**'
+      - '.github/workflows/lint-helm.yaml'
+  push:
+    branches:
+      - master
+    paths:
+      - 'kubernetes/**'
+      - '.tool-versions'
+      - '.github/actions/**'
+      - '.github/workflows/lint-helm.yaml'
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - name: Lint
+        run: >
+          helm lint kubernetes/*/*
