@@ -1,0 +1,29 @@
+default_ethereum_client_images:
+  # Consensus layer clients
+  lighthouse: ethpandaops/lighthouse:realbigsean-devnetv5-fa9c263
+  lodestar: g11tech/lodestar:blobs-60b3c-1
+  nimbus: statusim/nimbus-eth2:amd64-latest
+  prysm: ethpandaops/prysm:eip4844-9c0c3f5
+  teku: ethpandaops/teku:4844-interop-297d15c
+  # Execution layer clients
+  besu: ethpandaops/besu:eip-4844-interop-17a4928
+  geth: ethpandaops/geth:mdehoog-eip4844-47cf187
+  erigon: ethpandaops/erigon:roberto-bayardo-eip-4844-2d1be62
+  ethereumjs: g11tech/ethereumjs:blobs-b6b63
+  nethermind: nethermindeth/nethermind:eip-4844-v5
+
+default_tooling_images:
+  xatu_sentry: ethpandaops/xatu:0.0.60
+  ethereum_metrics_exporter: ethpandaops/ethereum-metrics-exporter:0.21.0
+  tx_fuzz: ethpandaops/tx-fuzz:1.1.0
+  forkmon: skylenet/nodemonitor:darkmode
+  forky: ethpandaops/forky:0.0.34-debian
+  fauceth: skylenet/fauceth:fix_fee_estimation
+  ethstats: skylenet/ethstats-server:poa-no-geoip
+  homepage: ethpandaops/ethereum-testnet-homepage:latest
+  checkpointz: ethpandaops/checkpointz:0.15.0
+  blockscout: blockscout/blockscout:master
+  beacon_metrics_gazer: dapplion/beacon-metrics-gazer:v0.1.3
+  eth_fauceth: chainflag/eth-faucet:latest
+  blobscan: blossomlabs/blobscan:latest
+  blobscan_indexer: blossomlabs/blobscan-indexer:latest
