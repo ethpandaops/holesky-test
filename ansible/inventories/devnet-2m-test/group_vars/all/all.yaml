@@ -35,7 +35,7 @@ ethereum_genesis_generator_container_image: "ethpandaops/ethereum-genesis-genera
 ethereum_genesis_network_seed: "{{ ansible_inventory_sources[0] }}"
 ethereum_genesis_chain_id: "70{{ 99999999 | random(start=10000000, seed=ethereum_genesis_network_seed) }}"
 ethereum_genesis_generator_output_dir: "../network-configs/{{ ethereum_network_name | replace('4844-', '') }}"
-ethereum_genesis_timestamp: 1690815600
+ethereum_genesis_timestamp: 1690880400
 ethereum_genesis_timedelay: 300
 ethereum_genesis_timestamp_relative_cmd:
   Linux: "date +%s -d '+45 minutes'"
