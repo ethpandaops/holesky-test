@@ -28,3 +28,11 @@
     src: "{{ eth_testnet_config_local_dir_src }}"
     dest: "{{ eth_testnet_config_dir }}/"
   when: eth_testnet_config_local_dir_enabled
+
+- name: Fetch file from public DigitalOcean Spaces
+  tasks:
+    - name: Download file using curl
+      ansible.builtin.command:
+        cmd: curl -o "{{ eth_testnet_config_dir }}/genesis.ssz" https://2m-val-test.fra1.cdn.digitaloceanspaces.com/genesis.ssz
+      register: curl_result
+      failed_when: "'Failed' in curl_result.stdout or 'failed' in curl_result.stdout"
