@@ -624,7 +624,7 @@ variable "digitalocean_vm_groups" {
         "47" = { "ansible_vars": "validator_start=2080000 validator_end=2085000", "region": "ams3" },
         "48" = { "ansible_vars": "validator_start=2085000 validator_end=2090000", "region": "fra1" },
         "49" = { "ansible_vars": "validator_start=2090000 validator_end=2095000", "region": "tor1" },
-        "50"= { "ansible_vars": "validator_start=2095000 validator_end=2100000", "region": "sfo2" }
+        "50" = { "ansible_vars": "validator_start=2095000 validator_end=2100000", "region": "sfo2" }
       }
     },
   ]
@@ -781,6 +781,7 @@ resource "digitalocean_firewall" "main" {
     protocol              = "icmp"
     destination_addresses = ["0.0.0.0/0", "::/0"]
   }
+  depends_on = [ digitalocean_vpc.main ]
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
