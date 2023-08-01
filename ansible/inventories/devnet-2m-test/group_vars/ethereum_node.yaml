@@ -1,9 +1,21 @@
 ethereum_cl_bootnodes:
   - "{{ hostvars['bootnode-1']['cl_bootnode_fact_enr'] }}"
   - "{{ hostvars['bootnode-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['lighthouse-geth-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['lighthouse-nethermind-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['prysm-geth-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['prysm-nethermind-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['teku-geth-1']['ethereum_node_fact_cl_enr'] }}"
+  - "{{ hostvars['teku-nethermind-1']['ethereum_node_fact_cl_enr'] }}"
 
 ethereum_el_bootnodes: 
   - "{{ hostvars['bootnode-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['lighthouse-geth-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['lighthouse-nethermind-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['prysm-geth-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['prysm-nethermind-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['teku-geth-1']['ethereum_node_fact_el_enode'] }}"
+  - "{{ hostvars['teku-nethermind-1']['ethereum_node_fact_el_enode'] }}"
 
 ethereum_node_fact_discovery_el_enode_cmd:
   ethereumjs: cat /data/ethereumjs/sepolia/rlpx

@@ -34,6 +34,7 @@ teku_container_command_extra_args:
   - --logging=info
   - --Xlog-include-p2p-warnings-enabled
   - --metrics-block-timing-tracking-enabled
+  - --p2p-peer-upper-bound=500
   # - --initial-state={{ checkpoint_sync_url }} # Need to remove genesis.ssz if using this
 
 # role: ethpandaops.general.geth
@@ -48,6 +49,7 @@ geth_container_command_extra_args:
   - --http.vhosts=*
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
+  - --maxpeers=500
 geth_init_custom_network: true
 geth_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 geth_container_pull: true
