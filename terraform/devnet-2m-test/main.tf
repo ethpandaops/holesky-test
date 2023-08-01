@@ -87,7 +87,27 @@ locals {
     var.lighthouse_nethermind,
     var.lighthouse_erigon,
     var.lighthouse_besu,
-    var.lighthouse_ethereumjs
+    var.lighthouse_ethereumjs,
+    var.prysm_geth,
+    var.prysm_nethermind,
+    var.prysm_erigon,
+    var.prysm_besu,
+    var.prysm_ethereumjs,
+    var.lodestar_geth,
+    var.lodestar_nethermind,
+    var.lodestar_erigon,
+    var.lodestar_besu,
+    var.lodestar_ethereumjs,
+    var.nimbus_geth,
+    var.nimbus_nethermind,
+    var.nimbus_erigon,
+    var.nimbus_besu,
+    var.nimbus_ethereumjs,
+    var.teku_geth,
+    var.teku_nethermind,
+    var.teku_erigon,
+    var.teku_besu,
+    var.teku_ethereumjs
   ]
 }
 
