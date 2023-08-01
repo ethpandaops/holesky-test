@@ -44,7 +44,7 @@ variable "cloudflare_api_token" {
 ////////////////////////////////////////////////////////////////////////////////////////
 variable "ethereum_network" {
   type    = string
-  default = "holesky-test-1"
+  default = "devnet-2m-test"
 }
 
 variable "digitalocean_project_name" {
@@ -74,7 +74,7 @@ variable "regions" {
 
 variable "base_cidr_block" {
   default = "10.10.0.0/16"
-  
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -108,10 +108,10 @@ locals {
     [
       for i in range(0, vm_group.count) : {
         group_name = "${vm_group.name}"
-        id = "${vm_group.name}-${i+1}"
+        id         = "${vm_group.name}-${i + 1}"
         vms = {
-          "${i+1}" = {
-            tags = "group_name:${vm_group.name},val_start:${vm_group.validator_start + (i * (vm_group.validator_end - vm_group.validator_start) / vm_group.count)},val_end:${min(vm_group.validator_start + ((i + 1) * (vm_group.validator_end - vm_group.validator_start) / vm_group.count), vm_group.validator_end)}"
+          "${i + 1}" = {
+            tags   = "group_name:${vm_group.name},val_start:${vm_group.validator_start + (i * (vm_group.validator_end - vm_group.validator_start) / vm_group.count)},val_end:${min(vm_group.validator_start + ((i + 1) * (vm_group.validator_end - vm_group.validator_start) / vm_group.count), vm_group.validator_end)}"
             region = element(var.regions, i % length(var.regions))
           }
 
@@ -138,15 +138,15 @@ locals {
         group_key = "${group.group_name}"
         vm_key    = vm_key
 
-        name        = try(vm.name, "${group.id}")
-        ssh_keys    = try(vm.ssh_keys, [data.digitalocean_ssh_key.main.fingerprint])
-        region      = try(vm.region, try(group.region, local.digitalocean_default_region))
-        image       = try(vm.image, local.digitalocean_default_image)
-        size        = try(vm.size, local.digitalocean_default_size)
-        resize_disk = try(vm.resize_disk, true)
-        monitoring  = try(vm.monitoring, true)
-        backups     = try(vm.backups, false)
-        ipv6        = try(vm.ipv6, false)
+        name         = try(vm.name, "${group.id}")
+        ssh_keys     = try(vm.ssh_keys, [data.digitalocean_ssh_key.main.fingerprint])
+        region       = try(vm.region, try(group.region, local.digitalocean_default_region))
+        image        = try(vm.image, local.digitalocean_default_image)
+        size         = try(vm.size, local.digitalocean_default_size)
+        resize_disk  = try(vm.resize_disk, true)
+        monitoring   = try(vm.monitoring, true)
+        backups      = try(vm.backups, false)
+        ipv6         = try(vm.ipv6, false)
         ansible_vars = try(vm.ansible_vars, null)
         vpc_uuid = try(vm.vpc_uuid, try(
           digitalocean_vpc.main[vm.region].id,
@@ -330,14 +330,14 @@ resource "local_file" "ansible_inventory" {
       hosts = merge(
         {
           for key, server in digitalocean_droplet.main : "do.${key}" => {
-            ip       = "${server.ipv4_address}"
-            group           = try(split(":",tolist(server.tags)[2])[1], "unknown")
-            validator_start = try(split(":",tolist(server.tags)[4])[1], 0)
-            validator_end   = try(split(":",tolist(server.tags)[3])[1], 0) # if the tag is not a number it will be 0 - e.g no validator keys 
-            tags     = "${server.tags}"
-            hostname = "${split(".", key)[0]}"
-            cloud    = "digitalocean"
-            region   = "${server.region}"
+            ip              = "${server.ipv4_address}"
+            group           = try(split(":", tolist(server.tags)[2])[1], "unknown")
+            validator_start = try(split(":", tolist(server.tags)[4])[1], 0)
+            validator_end   = try(split(":", tolist(server.tags)[3])[1], 0) # if the tag is not a number it will be 0 - e.g no validator keys 
+            tags            = "${server.tags}"
+            hostname        = "${split(".", key)[0]}"
+            cloud           = "digitalocean"
+            region          = "${server.region}"
           }
         }
       )
