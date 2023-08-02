@@ -9,14 +9,18 @@ secret_nginx_shared_basic_auth:
     password: ENC[AES256_GCM,data:EMqbXGda+SjbGaTdgpYx,iv:RPCW9HbT7gvmFt2EMvbmolNI53Bp8Pog35SHLfNNYh4=,tag:pBWqf4XoY3qAMOqxzsTcJQ==,type:str]
 secret_ethstats: ENC[AES256_GCM,data:oojn6N0WkP4Kt4M65gRoHRA=,iv:zmHtA2aXBRSTMfgg40S1n7zRGdCAtwOOCfMcOfec9HQ=,tag:506G60yueCqu+nIBpi++/w==,type:str]
 secret_genesis_mnemonic: ENC[AES256_GCM,data:VoGTUWSK4RrpBipAhZBaX+ukGqfN+EL/e4ndhpuIbJfX9EmbXmGoeevZXNMhJaIeI6ykA+oTmvgPRBLnQpqNLk2kjwDx3Z+au69aCqev8mK7gPX9AXRHIcNDLM3rQIaIXHT/O8WeHfBRJctm6baLHzuNW12IY6vk9fNkWXJfFxFJiGtfakNpkeUi4X3xAwKDg799JA==,iv:shaJPQKVNRHl/RqIEluxN7CPesLoTeFPAqSODJITlr4=,tag:TPenve7LBS+5C19fKOUBSA==,type:str]
+secret_xatu_sentry:
+    server_address: ENC[AES256_GCM,data:4nh4X7xMzwJwi1GUVmUt8UvrPVUefQnqHJIezxYwZ3hch6OEWyD4Q6Xoa8x1ysZDd81l,iv:U3stEniD50YYSb32tB0LkOal4s9T6TX7IRc+XPGo2kE=,tag:j7Va3Q/oK8dsbZ0t32+Hog==,type:str]
+    user: ENC[AES256_GCM,data:2GHMKRoLhA==,iv:9tNPZgP3DnGB7WculF+e2MnxuX+BB4+1I0HmRRFR+NY=,tag:aVAQXsyKYtubODdbAHc7zQ==,type:str]
+    password: ENC[AES256_GCM,data:xOQM4tFDHlTbKOJ7/ykR9Yoz4M+9b34KNHfbtg7pWqFDtfGZ,iv:nFeM7XxJrtg+1Q9suGEykxCBPM+Q+OpCQ36r44kfbAg=,tag:OWNk3AMfGdQZRQ6vFXRnKw==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-07-28T15:43:19Z"
-    mac: ENC[AES256_GCM,data:k+wJ4+dYpw2xEkTxJb7jEKXlGxJEeHZaW07cqtOwq6WYYND87m7Jw+omEBGcq7TkHlAKglce8BW9YXbsQh+BR7VghoQDfpF0WhEk/SAzZE/QvndZtRLfZ3S3/HtsMZeg/Ad52C1hDVmHQ4RKTzTG1b9HEnU10f+Th6qZuzevRyA=,iv:FQXHWMUod/kznfII7/YQuV/L2xHQMyRr69clWJUpyPo=,tag:WDwSqbK+BFFwKbq0l1oXKQ==,type:str]
+    lastmodified: "2023-08-02T08:42:16Z"
+    mac: ENC[AES256_GCM,data:SN3R3aX3VG2EkQBGMDYbql7Vk9isje+sJ0hJPpwXf3xJjA6KsUYshSyk/BC5ChnM3snwtCptTBTGEhcHKYh1nTh0wOuXmCqS/w7mljlofXEsS9yZ1odCpKxurzgeMpOY6UfV3Eeznkr1oQjQsVAfSguXW9Auh4AyzX+vZV3/oVg=,iv:hUIl+n7BGqryFShDA0dqqO1CHC8DjMUjiCWMQW4IgkQ=,tag:EihaSwposgNYmFfEufiQWA==,type:str]
     pgp:
         - created_at: "2023-02-02T11:09:14Z"
           enc: |-
