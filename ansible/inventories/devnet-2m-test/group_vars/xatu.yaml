@@ -4,13 +4,20 @@ xatu_sentry_container_command:
   - sentry
   - --config=/config.yaml
 
+# role: ethpandaops.general.xatu_sentry
+xatu_sentry_config_name: "{{ ethereum_network_name }}-{{ inventory_hostname }}"
+xatu_sentry_config_server_address: "{{ secret_xatu_sentry.server_address }}"
+xatu_sentry_config_server_auth_user: "{{ secret_xatu_sentry.user }}"
+xatu_sentry_config_server_auth_password: "{{ secret_xatu_sentry.password }}"
+xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
+
 xatu_sentry_config:
   logging: "info"
   metricsAddr: ":9090"
   name: "{{ xatu_sentry_config_name }}"
   ethereum:
     beaconNodeAddress: "{{ vars[ethereum_node_cl + '_container_name'] }}:{{ethereum_node_cl_ports_http_beacon}}"
-    overrideNetworkName: {{ xatu_sentry_config_network_name_override }}
+    overrideNetworkName: "{{ xatu_sentry_config_network_name_override }}"
   outputs:
   - name: grpc-general
     type: xatu
