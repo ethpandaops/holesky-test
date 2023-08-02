@@ -1,8 +1,8 @@
 # Bootnode
 variable "bootnode" {
   default = {
-    name  = "bootnode"
-    count = 1
+    name            = "bootnode"
+    count           = 1
     validator_start = 0
     validator_end   = 0
   }
