@@ -2,7 +2,7 @@ default_ethereum_client_images:
   # Consensus layer clients
   prysm: gcr.io/prysmaticlabs/prysm/beacon-chain:v4.0.7
   prysm_validator: gcr.io/prysmaticlabs/prysm/validator:v4.0.7
-  teku: consensys/teku@sha256:59f63a0a46461226214617b7c8100f8c69791b6e94c330a87cc3118be8474830
+  teku: consensys/teku@sha256:4fa035d30ba9247d662b99504e7f463076857016ff52d65108c88a1ef711de09
   lighthouse: sigp/lighthouse:v4.3.0
   nimbus: statusim/nimbus-eth2:multiarch-v23.7.0
   lodestar: chainsafe/lodestar:v1.9.2

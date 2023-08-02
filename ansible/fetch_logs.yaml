@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: Fetch the log files
+      fetch:
+        src: "/home/devops/{{ inventory_hostname }}-logs/beacon.log"
+        dest: "/Users/parithosh/dev/eth2/holesky-test/ansible/logs_20230802/{{ inventory_hostname }}/beacon.log"
+        flat: yes
+    - name: Fetch the log files
+      fetch:
+        src: "/home/devops/{{ inventory_hostname }}-logs/snooper.log"
+        dest: "/Users/parithosh/dev/eth2/holesky-test/ansible/logs_20230802/{{ inventory_hostname }}/snooper.log"
+        flat: yes
+    - name: Fetch the log files
+      fetch:
+        src: "/home/devops/{{ inventory_hostname }}-logs/execution.log"
+        dest: "/Users/parithosh/dev/eth2/holesky-test/ansible/logs_20230802/{{ inventory_hostname }}/execution.log"
+        flat: yes
