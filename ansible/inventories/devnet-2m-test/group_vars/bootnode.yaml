@@ -28,7 +28,7 @@ teku_container_volumes:
 teku_container_command_extra_args:
   - --network=/network-config/config.yaml
   - --initial-state=/network-config/genesis.ssz
-  - --p2p-peer-upper-bound=100
+  - --p2p-peer-upper-bound=500
   - --data-storage-non-canonical-blocks-enabled=true
   - --data-storage-mode=PRUNE
   - --logging=info
@@ -48,6 +48,7 @@ geth_container_command_extra_args:
   - --http.vhosts=*
   - --networkid={{ ethereum_network_id }}
   - --syncmode=full
+  - --maxpeers=500
 geth_init_custom_network: true
 geth_init_custom_network_genesis_file: "{{ eth_testnet_config_dir }}/genesis.json"
 geth_container_pull: true

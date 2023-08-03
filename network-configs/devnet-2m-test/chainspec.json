@@ -9,7 +9,7 @@
     "accountStartNonce": "0x0",
     "maximumExtraDataSize": "0xffff",
     "minGasLimit": "0x1388",
-    "networkID": "0x1a49215a6",
+    "networkID": "0x1a6dca6f9",
     "MergeForkIdTransition": "0x0",
     "maxCodeSize": "0x6000",
     "maxCodeSizeTransition": "0x0",
@@ -41,12 +41,12 @@
     "eip3198Transition": "0x0",
     "eip3529Transition": "0x0",
     "eip3541Transition": "0x0",
-    "eip4895TransitionTimestamp": "0x64c426ec",
-    "eip3855TransitionTimestamp": "0x64c426ec",
-    "eip3651TransitionTimestamp": "0x64c426ec",
-    "eip3860TransitionTimestamp": "0x64c426ec",
+    "eip4895TransitionTimestamp": "0x64ca862c",
+    "eip3855TransitionTimestamp": "0x64ca862c",
+    "eip3651TransitionTimestamp": "0x64ca862c",
+    "eip3860TransitionTimestamp": "0x64ca862c",
     "terminalTotalDifficulty": "0x0",
-    "eip4844TransitionTimestamp": "0x64c9fb6c"
+    "eip4844TransitionTimestamp": "0x64d05aac"
   },
   "genesis": {
     "seal": {
@@ -57,7 +57,7 @@
     },
     "difficulty": "0x01",
     "author": "0x0000000000000000000000000000000000000000",
-    "timestamp": "0x64c41e40",
+    "timestamp": "0x64ca7d80",
     "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "extraData": "",
     "gasLimit": "0x17D7840"
