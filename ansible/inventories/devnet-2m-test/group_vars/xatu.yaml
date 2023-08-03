@@ -4,8 +4,9 @@ xatu_sentry_config_server_address: "{{ secret_xatu_sentry.server_address }}"
 xatu_sentry_config_server_auth_user: "{{ secret_xatu_sentry.user }}"
 xatu_sentry_config_server_auth_password: "{{ secret_xatu_sentry.password }}"
 xatu_sentry_config_network_name_override: "{{ ethereum_network_name }}"
-
 xatu_sentry_container_networks: "{{ docker_networks_shared }}"
+xatu_sentry_container_image: "{{ default_tooling_images.xatu_sentry }}"
+
 
 xatu_sentry_container_command:
   - sentry
@@ -33,8 +34,8 @@ xatu_sentry_config:
         - BEACON_API_ETH_V1_EVENTS_ATTESTATION
         - BEACON_API_ETH_V2_BEACON_BLOCK
     config:
-      address: {{ xatu_sentry_config_server_address }}
+      address: "{{ xatu_sentry_config_server_address }}"
       tls: true
       headers:
-        authorization: "Basic {{ (xatu_sentry_config_server_auth_user + ":" + xatu_sentry_config_server_auth_password) | b64encode }}"
+        authorization: "Basic {{ (xatu_sentry_config_server_auth_user + ':' + xatu_sentry_config_server_auth_password) | b64encode }}"
       maxExportBatchSize: 512
