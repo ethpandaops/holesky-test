@@ -76,3 +76,9 @@
       tags: [eth_post_network_setup]
     - role: gen_kubernetes_config
       tags: [gen_kubernetes_config]
+
+- hosts: xatu
+  become: true
+  roles:
+    - role: ethpandaops.general.xatu_sentry
+      tags: [xatu]

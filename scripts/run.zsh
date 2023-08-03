@@ -1,14 +1,14 @@
 #!/bin/zsh
-node="teku-geth-1"
-network="sepolia-sf1"
+node="teku-geth-4"
+network="devnet-2m-test"
 domain="ethpandaops.io"
-prefix="4844"
+prefix=""
 sops_name=$(sops --decrypt ../ansible/inventories/$network/group_vars/all/all.sops.yaml | yq -r '.secret_nginx_shared_basic_auth.name')
 sops_password=$(sops --decrypt ../ansible/inventories/$network/group_vars/all/all.sops.yaml | yq -r '.secret_nginx_shared_basic_auth.password')
 sops_mnemonic=$(sops --decrypt ../ansible/inventories/$network/group_vars/all/all.sops.yaml | yq -r '.secret_genesis_mnemonic')
-bn_endpoint="${BEACON_ENDPOINT:-https://$sops_name:$sops_password@bn.$node.srv.$prefix-$network.$domain}"
-rpc_endpoint="${RPC_ENDPOINT:-https://$sops_name:$sops_password@rpc.$node.srv.$prefix-$network.$domain}"
-bootnode_endpoint="${BOOTNODE_ENDPOINT:-https://bootnode-1.srv.$prefix-$network.$domain}"
+bn_endpoint="${BEACON_ENDPOINT:-https://$sops_name:$sops_password@bn.$node.srv.$network.$domain}"
+rpc_endpoint="${RPC_ENDPOINT:-https://$sops_name:$sops_password@rpc.$node.srv.$network.$domain}"
+bootnode_endpoint="${BOOTNODE_ENDPOINT:-https://bootnode-1.srv.$network.$domain}"
 
 # Helper function to display available options
 print_usage() {
