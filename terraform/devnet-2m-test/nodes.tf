@@ -12,27 +12,27 @@ variable "bootnode" {
 variable "lighthouse_geth" {
   default = {
     name            = "lighthouse-geth"
-    count           = 50
+    count           = 73
     validator_start = 0
-    validator_end   = 250000
+    validator_end   = 365000
   }
 }
 
 variable "lighthouse_besu" {
   default = {
     name            = "lighthouse-besu"
-    count           = 20
-    validator_start = 250000
-    validator_end   = 350000
+    count           = 26
+    validator_start = 365000
+    validator_end   = 495000
   }
 }
 
 variable "lighthouse_nethermind" {
   default = {
     name            = "lighthouse-nethermind"
-    count           = 50
-    validator_start = 350000
-    validator_end   = 600000
+    count           = 42
+    validator_start = 495000
+    validator_end   = 705000
   }
 }
 
@@ -58,27 +58,27 @@ variable "lighthouse_erigon" {
 variable "prysm_geth" {
   default = {
     name            = "prysm-geth"
-    count           = 50
-    validator_start = 600000
-    validator_end   = 850000
+    count           = 93
+    validator_start = 705000
+    validator_end   = 1170000
   }
 }
 
 variable "prysm_besu" {
   default = {
     name            = "prysm-besu"
-    count           = 20
-    validator_start = 850000
-    validator_end   = 950000
+    count           = 34
+    validator_start = 1170000
+    validator_end   = 1340000
   }
 }
 
 variable "prysm_nethermind" {
   default = {
     name            = "prysm-nethermind"
-    count           = 50
-    validator_start = 950000
-    validator_end   = 1200000
+    count           = 53
+    validator_start = 1340000
+    validator_end   = 1605000
   }
 }
 
@@ -104,27 +104,27 @@ variable "prysm_erigon" {
 variable "lodestar_geth" {
   default = {
     name            = "lodestar-geth"
-    count           = 20
-    validator_start = 1200000
-    validator_end   = 1300000
+    count           = 2
+    validator_start = 1605000
+    validator_end   = 1615000
   }
 }
 
 variable "lodestar_nethermind" {
   default = {
     name            = "lodestar-nethermind"
-    count           = 20
-    validator_start = 1300000
-    validator_end   = 1400000
+    count           = 1
+    validator_start = 1615000
+    validator_end   = 1620000
   }
 }
 
 variable "lodestar_besu" {
   default = {
     name            = "lodestar-besu"
-    count           = 20
-    validator_start = 1400000
-    validator_end   = 1500000
+    count           = 1
+    validator_start = 1620000
+    validator_end   = 1625000
   }
 }
 
@@ -150,17 +150,17 @@ variable "lodestar_erigon" {
 variable "nimbus_geth" {
   default = {
     name            = "nimbus-geth"
-    count           = 20
-    validator_start = 1500000
-    validator_end   = 1600000
+    count           = 11
+    validator_start = 1625000
+    validator_end   = 1680000
   }
 }
 
 variable "nimbus_besu" {
   default = {
     name            = "nimbus-besu"
-    count           = 20
-    validator_start = 1600000
+    count           = 4
+    validator_start = 1680000
     validator_end   = 1700000
   }
 
@@ -169,9 +169,9 @@ variable "nimbus_besu" {
 variable "nimbus_nethermind" {
   default = {
     name            = "nimbus-nethermind"
-    count           = 20
+    count           = 6
     validator_start = 1700000
-    validator_end   = 1800000
+    validator_end   = 1730000
   }
 }
 
@@ -197,26 +197,26 @@ variable "nimbus_erigon" {
 variable "teku_geth" {
   default = {
     name            = "teku-geth"
-    count           = 20
-    validator_start = 1800000
-    validator_end   = 1900000
+    count           = 38
+    validator_start = 1730000
+    validator_end   = 1920000
   }
 }
 
 variable "teku_besu" {
   default = {
     name            = "teku-besu"
-    count           = 20
-    validator_start = 1900000
-    validator_end   = 2000000
+    count           = 14
+    validator_start = 1920000
+    validator_end   = 1990000
   }
 }
 
 variable "teku_nethermind" {
   default = {
     name            = "teku-nethermind"
-    count           = 20
-    validator_start = 2000000
+    count           = 22
+    validator_start = 1990000
     validator_end   = 2100000
   }
 }
