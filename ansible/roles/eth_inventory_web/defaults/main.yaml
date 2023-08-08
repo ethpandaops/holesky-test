@@ -31,10 +31,10 @@ eth_inventory_web_content:
           {% for host in (groups['ethereum_node'] + groups['bootnode']) | sort %}
             "{{ host }}": {
               "consensus": {
-                "client": "{{ hostvars[host]['ethereum_node_cl'] }}",
+                "client": "{{ hostvars[host]['ethereum_node_cl'] | default('unknown') }}",
                 "image": "{{ hostvars[host][(hostvars[host]['ethereum_node_cl']) + '_container_image'] }}",
-                "enr": "{{ hostvars[host]['ethereum_node_fact_cl_enr'] }}",
-                "peer_id": "{{ hostvars[host]['ethereum_node_fact_cl_peer_id'] }}",
+                "enr": "{{ hostvars[host]['ethereum_node_fact_cl_enr'] | default('unknown') }}",
+                "peer_id": "{{ hostvars[host]['ethereum_node_fact_cl_peer_id'] | default('unknown') }}",
                 "beacon_uri": "https://{{ hostvars[host]['ethereum_node_beacon_hostname'] }}"
               },
               "execution": {
