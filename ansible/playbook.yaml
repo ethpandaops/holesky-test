@@ -48,7 +48,6 @@
 - hosts: ethereum_node
   serial: "{{ batch_count | default('100%') }}"
   become: true
-  no_log: true
   roles:
     - role: eth_testnet_config
       tags: [ethereum, eth_testnet_config]
