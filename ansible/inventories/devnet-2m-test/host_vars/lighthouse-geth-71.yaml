@@ -1,0 +1,9 @@
+default_ethereum_client_images:
+  lighthouse: ethpandaops/lighthouse:tree-states
+  geth: ethereum/client-go:v1.12.0
+
+lighthouse_container_command_extra_args:
+  - --testnet-dir=/network-config
+  - --boot-nodes={{ ethereum_cl_bootnodes | join(',') }}
+  - --debug-level=debug
+  - --unsafe-and-dangerous-mode
