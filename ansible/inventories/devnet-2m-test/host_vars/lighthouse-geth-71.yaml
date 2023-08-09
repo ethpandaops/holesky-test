@@ -1,5 +1,5 @@
 default_ethereum_client_images:
-  lighthouse: ethpandaops/lighthouse:tree-states
+  lighthouse: ethpandaops/lighthouse:tree-states-e373e9a
   geth: ethereum/client-go:v1.12.0
 
 lighthouse_container_command_extra_args:
